@@ -5,7 +5,7 @@
 
 addpath('shape_context')
 DATA_ROOT='data/women_top/';
-MASK_DIR='results/stage1/tps/00015000_';
+MASK_DIR='results/stage1/tps/00006000_';
 
 % Check if using MATLAB or Octave
 isOctave = exist('OCTAVE_VERSION', 'builtin') ~= 0;

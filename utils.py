@@ -58,10 +58,11 @@ def extract_segmentation(segment):
   product_segmentation = tf.cast(tf.equal(segment, 5), tf.float32)
 
 
-  skin_segmentation = (tf.cast(tf.equal(segment, 1), tf.float32) +
-                       tf.cast(tf.equal(segment, 2), tf.float32) +
-                       tf.cast(tf.equal(segment, 4), tf.float32) +
-                       tf.cast(tf.equal(segment, 13), tf.float32))
+  skin_segmentation = (tf.cast(tf.equal(segment, 1), tf.float32)  + # hat
+                       tf.cast(tf.equal(segment, 2), tf.float32)  + # hair
+                       tf.cast(tf.equal(segment, 4), tf.float32)  + # sunglasses 
+                       tf.cast(tf.equal(segment, 13), tf.float32) + # face
+                       tf.cast(tf.equal(segment, 9), tf.float32))   # pants
 
   body_segmentation = (1.0 - tf.cast(tf.equal(segment, 0), tf.float32) -
                           skin_segmentation)

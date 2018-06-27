@@ -76,11 +76,11 @@ def _process_image(image_name, product_image_name, sess,
   prod_image = scipy.misc.imread(FLAGS.image_dir + product_image_name)
   # sorry for the hard coded file path.
   coarse_image = scipy.misc.imread(FLAGS.coarse_result_dir +
-                                   "/images/00015000_" +
+                                   "/images/00006000_" +
                                    image_name + "_" +
                                    product_image_name + ".png")
   mask_output = scipy.misc.imread(FLAGS.coarse_result_dir +
-                                  "/images/00015000_" +
+                                  "/images/00006000_" +
                                   image_name + "_" +
                                   product_image_name + "_mask.png")
   image = process_one_image(image, resize_height, resize_width)
@@ -92,7 +92,7 @@ def _process_image(image_name, product_image_name, sess,
   # Here we use control points to generate 
   # We tried to learn the control points, but the network refuses to converge.
   tps_control_points = sio.loadmat(FLAGS.coarse_result_dir +
-                                   "/tps/00015000_" +
+                                   "/tps/00006000_" +
                                    image_name + "_" +
                                    product_image_name +
                                    "_tps.mat")
